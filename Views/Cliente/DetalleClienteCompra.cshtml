@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MiPrimeraASP.Models.clienteCompra>
+
+@{
+    ViewBag.Title = "DetalleClienteCompra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var query = Model;
+}
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Cliente</th>
+
+            <th>Codigo Compra</th>
+
+            <th>Correo</th>
+
+            <th>Fecha de compra</th>
+
+            <th>Total compra</th>
+
+        </tr>
+    </thead>
+</table>
+
+<tbody>
+    @{
+        <div class="container">
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.clienteNombre)</td>
+
+                <td>@Html.DisplayFor(modelItem => item.compraId)</td>
+
+                <td>@Html.DisplayFor(modelItem => item.emailCliente)</td>
+
+                <td>@Html.DisplayFor(modelItem => item.fechaCompra)</td>
+
+                <td>@Html.DisplayFor(modelItem => item.totalCompra)</td>
+            </tr>
+            }
+        </div>
+
+        
+    }
+</tbody>
+
